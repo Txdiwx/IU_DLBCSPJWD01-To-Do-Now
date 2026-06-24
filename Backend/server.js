@@ -2,11 +2,13 @@ const express = require("express");
 const mongoose = require("mongoose");
 const Task = require("./models/task.model");
 const cors = require("cors");
+const authRoutes = require("./routes/auth.routes");
 
 const app = express();
 
 app.use(express.json())
 app.use(cors());
+app.use("/auth",authRoutes);
 
 const PORT = process.env.PORT || 4000;
 

@@ -6,13 +6,22 @@ import {
   FaRegDotCircle,
   FaCheckCircle
 } from "react-icons/fa";
+import {
+  Routes,
+  Route,
+  Link
+  }
+  from "react-router-dom";
+  
+  import Login from "./Login";
+  import Register from "./Register";
 
 //Toast error catching
 import { toast } from "react-toastify";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
-const App = () => {
+const Dashboard = () => {
 //Use State Hooks
   const [tasks, setTasks] = useState([]);
   const [task, setTask] = useState("");
@@ -124,10 +133,10 @@ fetchTasks();
 }
 
 //handleDone MARK AS DONE
-const handleDone = async (id) => {
+const handleDone = async (id, currentStatus) => {
   try {
     await axios.put(`${API_URL}/${id}`,{
-      taskDone: !task.taskDone,
+      taskDone: !currentStatus,
     });
     fetchTasks();
   }catch (error) {
@@ -218,8 +227,8 @@ const handleDeleteAll = async () => {
       className="hidden"
     />
     <span
-      className={`w-6 h-6 rounded-full block bg-blue-500 ${
-        color === "blue"
+      className={`w-6 h-6 rounded-full block bg-yellow-500 ${
+        color === "yellow"
           ? "border-2 border-white"
           : ""
       }`}
@@ -379,6 +388,33 @@ const handleDeleteAll = async () => {
 
     </div>
   );
-};
+       }
 
-export default App;
+export default function App(){
+
+  return(
+  
+  <Routes>
+  
+  <Route
+  path="/"
+  element={<Login/>}
+  />
+  
+  <Route
+  path="/register"
+  element={<Register/>}
+  />
+  
+  <Route
+  path="/dashboard"
+  element={<Dashboard/>}
+  />
+  
+  </Routes>
+  
+  );
+  
+  }
+  
+  
