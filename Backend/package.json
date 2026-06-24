@@ -1,0 +1,23 @@
+{
+  "name": "TO DO NOW",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Jo-anne",
+  "license": "ISC",
+  "description": "An online To Do List application",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^4.19.2",
+    "mongodb": "^7.3.0",
+    "mongoose": "^9.7.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
