@@ -1,1 +1,171 @@
 @import "tailwindcss";
+
+/* =========================
+   RESET & BASE
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f7f7f7;
+  color: #222;
+}
+
+/* =========================
+   FLUID TYPOGRAPHY (DYNAMIC)
+========================= */
+
+h1 {
+  font-size: clamp(22px, 3vw, 32px);
+}
+
+h2 {
+  font-size: clamp(18px, 2.5vw, 26px);
+}
+
+p {
+  font-size: clamp(14px, 2vw, 16px);
+  line-height: 1.5;
+}
+
+/* =========================
+   GLOBAL LAYOUT
+========================= */
+
+.container {
+  width: min(100% - 24px, 1200px);
+  margin-inline: auto;
+  padding: 12px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* =========================
+   BUTTONS (FLUID)
+========================= */
+
+button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: clamp(12px, 1.5vw, 14px);
+  transition: 0.2s ease;
+  min-height: 42px;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* =========================
+   INPUTS (FLUID)
+========================= */
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: clamp(13px, 1.5vw, 14px);
+}
+
+/* =========================
+   TASK SYSTEM (FULLY FLUID)
+========================= */
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+/* 🔥 KEY FIX: FLEX WRAP + FLUID WIDTH */
+.task-box {
+  width: min(100%, 650px);
+  margin: 10px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+/* ensures inner elements don’t overflow */
+.task-box > * {
+  flex: 1 1 auto;
+  min-width: 120px;
+}
+
+/* =========================
+   AUTH (LOGIN / REGISTER)
+========================= */
+
+.auth-container {
+  width: min(100% - 24px, 420px);
+  margin: 60px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   RESPONSIVE BREAKPOINTS
+========================= */
+
+/* Tablets */
+@media (max-width: 768px) {
+
+  .task-box {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .auth-container {
+    margin: 40px 12px;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+
+  .task-box {
+    padding: 10px;
+  }
+
+  input {
+    font-size: 14px;
+  }
+}
