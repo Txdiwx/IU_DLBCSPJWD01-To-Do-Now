@@ -113,7 +113,6 @@ TO DO NOW/
 │   ├── src/
 │   │   ├── App.jsx
 │   │   ├── Dashboard.jsx
-│   │   ├── Dashboarb.css
 │   │   ├── Login.jsx
 │   │   ├── Register.jsx
 │   │   ├── Welcome.jsx
@@ -221,6 +220,6 @@ This project strengthened understanding of:
 
 ## 👨‍💻 Author
 
-**Tadiwanashe J. Magurura**
+**Tadiwanashe J. Magurira**
 
 Developed as part of the **IU Web Development Portfolio Project** 🎓
